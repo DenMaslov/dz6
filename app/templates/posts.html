@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+{% block title %}Posts{% endblock %}
+{% block body %}
+
+{% for post in data["d"] %}        
+    <div class="container__post">
+        <a href="/{{ post['slug'] }}" class="post__title" >
+            <h2>{{ post['title'] }}</h2>
+        </a>
+        <p class="text-left">{{ post['text'] }}
+        </p>
+        <div class="data">
+            {{ post['data'] }}
+        </div>
+    </div>
+{% endfor %}
+    
+{% endblock %}

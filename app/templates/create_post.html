@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+{% block title %}Create New Post{% endblock %}
+{% block body %}
+<div class="container__create">
+    <h1 class="display-3 create__title">Create new post</h1>
+    <form action="/create" method="POST">
+        <div class="form-group">
+            <input name="author" maxlength="100" class="form-control form-control-lg line" type="text" placeholder="Author">
+            <input name="title" maxlength="100" class="form-control form-control-lg line" type="text" placeholder="Title">
+            <textarea name="text" maxlength="1000" class="form-control form-control-lg create__text" placeholder="Text" rows="10"></textarea>
+        </div>
+        <button type="submit" class="btn__send btn btn-primary">Create</button>
+    </form>
+</div>
+{% endblock %}

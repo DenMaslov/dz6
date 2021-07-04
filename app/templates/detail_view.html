@@ -1,0 +1,37 @@
+{% extends "index.html" %}
+{% block title %}Post{% endblock %}
+{% block body %}
+
+<div class="container__detail">
+    {% for post in data["post"] %}
+    <div class="container__post">
+        <p class="detail__title" >
+            {{ post['title'] }}
+        </p>
+        <p class="author">by {{post['author']}}</p>
+        <p class="text-left">{{ post['text'] }}
+        </p>
+        <div class="data">
+            {{ post['data'] }}
+        </div>
+    </div>
+    <div class="container__comment">
+        <form action="/{{ post['slug'] }}" method="POST">
+            <div class="form-group">
+                <input name="author" maxlength="100" class="form-control form-control-lg line" type="text" placeholder="Author">
+                <textarea name="text" maxlength="200" class="form-control form-control-lg create__text" placeholder="comment" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn__comment btn btn-primary">Comment</button>
+        </form>
+    </div>
+    {% endfor %}
+    {% for comment in data["comments"] %}
+    <div class="container__comments">
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">{{comment['author']}}</h4>
+            <p>{{comment['text']}}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>   
+{% endblock %}
