@@ -1,9 +1,9 @@
 ### INSTALLATION:
 1. git clone https://github.com/DenMaslov/dz6.git
 2. cd dz6
-3. cd app
-4. pipenv shell
-5. pipenv install
+3. pipenv shell
+4. pipenv install
+5. cd app
 6. python posts.py
 
 
