@@ -24,7 +24,8 @@
 
 
 
-
+### ERRORS
+If you get an error: "redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379." You should install redis and check if it works via "ping" utility.
 
 
 
